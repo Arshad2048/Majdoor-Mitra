@@ -1,0 +1,84 @@
+/* =====================
+   DESKTOP FOOTER
+   ===================== */
+
+@media (min-width: 769px) {
+    .footer-main {
+        padding: 64px 0 48px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1.5fr 1fr 0.8fr 1fr;
+        gap: 48px;
+    }
+
+    .footer-brand-tagline {
+        max-width: 280px;
+    }
+
+    .footer-links h4 {
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        margin-bottom: 8px;
+        padding-bottom: 10px;
+    }
+
+    .footer-links h4::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 28px;
+        height: 2px;
+        background: var(--brand-secondary);
+        border-radius: 2px;
+    }
+
+    .footer-links a {
+        padding: 2px 0;
+    }
+
+    .footer-links a:hover {
+        color: var(--brand-secondary);
+        padding-left: 4px;
+    }
+
+    .footer-cta-link:hover svg {
+        transform: translateX(3px);
+    }
+
+    .footer-bottom {
+        padding: 20px 0;
+    }
+
+    .footer-bottom-inner {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Ensure integrated link container works with the grid */
+    .footer-links-container {
+        display: contents; /* Allows children to participate in the outer grid */
+    }
+
+    .footer-link-group {
+        display: flex !important;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Hiding Mobile-Specific Elements on Desktop */
+    .footer-contact-row-mobile,
+    .mobile-chevron {
+        display: none !important;
+    }
+}
+
+/* ── Tablet/Small Desktop Grid Adjustments ── */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 36px;
+    }
+}

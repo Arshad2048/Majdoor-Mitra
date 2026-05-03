@@ -1,0 +1,51 @@
+/* =====================
+   POSTS DESKTOP STYLES
+   ===================== */
+
+@media (min-width: 769px) {
+    .posts-shared-app {
+        padding: 30px 20px 100px;
+    }
+
+    .posts-shared-card {
+        border-radius: 20px;
+        box-shadow: var(--shadow-lg);
+    }
+
+    .posts-shared-header {
+        padding: 40px 24px;
+        text-align: center;
+    }
+
+    .posts-shared-header-icon {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        margin-bottom: 16px;
+    }
+
+    .posts-shared-title {
+        font-size: 1.75rem;
+        margin-bottom: 8px;
+    }
+
+    .posts-shared-subtitle {
+        font-size: 0.95rem;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .posts-shared-form {
+        padding: 32px 24px;
+        gap: 32px;
+    }
+
+    .posts-shared-error {
+        margin: 20px 30px 0;
+    }
+
+    /* Hide back button on desktop if not needed */
+    .posts-shared-back-btn {
+        display: none;
+    }
+}

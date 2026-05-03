@@ -1,0 +1,210 @@
+/* ══════════════════════════════════════════════════
+   Admin Panel Skeleton Loading System
+   ══════════════════════════════════════════════════ */
+
+@keyframes skeleton-shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+.skeleton-base {
+    animation: skeleton-shimmer 2s infinite linear;
+    background: #f3f4f6;
+    background-image: linear-gradient(
+        90deg,
+        #f3f4f6 0px,
+        #e5e7eb 40px,
+        #f3f4f6 80px
+    );
+    background-size: 1000px 100%;
+}
+
+.skeleton-box {
+    border-radius: 8px;
+    width: 100%;
+    height: 100%;
+}
+
+.skeleton-circle {
+    border-radius: 50%;
+}
+
+.skeleton-text-line {
+    border-radius: 4px;
+    height: 12px;
+    margin-bottom: 8px;
+    width: 100%;
+}
+
+.skeleton-text-line.short {
+    width: 50%;
+}
+
+.skeleton-text-line.medium {
+    width: 75%;
+}
+
+/* ── Dashboard Specific Skeletons ── */
+.admin-dashboard-grid.skeleton-grid {
+    pointer-events: none;
+}
+
+.skeleton-stat-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 24px;
+    border: 1px solid #f1f5f9;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.skeleton-stat-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.skeleton-icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+}
+
+.skeleton-stat-title {
+    height: 14px;
+    width: 60%;
+    margin-bottom: 12px;
+}
+
+.skeleton-stat-value {
+    height: 32px;
+    width: 40%;
+    margin-bottom: 16px;
+}
+
+.skeleton-stat-trend {
+    height: 12px;
+    width: 80%;
+}
+
+.skeleton-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 40px 0 24px 0;
+}
+
+.skeleton-header-title {
+    height: 28px;
+    width: 250px;
+}
+
+.skeleton-header-action {
+    height: 40px;
+    width: 150px;
+    border-radius: 10px;
+}
+
+.skeleton-chart-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 24px;
+    border: 1px solid #f1f5f9;
+    height: 400px;
+}
+
+/* ── Table Skeletons (Users & Posts) ── */
+.skeleton-table-container {
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    margin-bottom: 24px;
+    pointer-events: none;
+}
+
+.skeleton-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.skeleton-table th, 
+.skeleton-table td {
+    padding: 16px 24px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.skeleton-table th {
+    height: 52px;
+    background: #f8fafc;
+}
+
+.skeleton-table-header-cell {
+    height: 14px;
+    width: 80%;
+}
+
+.skeleton-table-row {
+    height: 72px;
+}
+
+.skeleton-table-user {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.skeleton-table-avatar {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+}
+
+/* ── Mobile Card Skeletons ── */
+.skeleton-mobile-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-bottom: 24px;
+    pointer-events: none;
+}
+
+.skeleton-mobile-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 16px;
+    border: 1px solid #f1f5f9;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.skeleton-mobile-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.skeleton-mobile-card-badge {
+    height: 20px;
+    width: 60px;
+    border-radius: 10px;
+}
+
+/* ── Responsive Utilities ── */
+@media (max-width: 1024px) {
+    .desktop-only {
+        display: none !important;
+    }
+}
+
+@media (min-width: 1025px) {
+    .mobile-only {
+        display: none !important;
+    }
+}
+

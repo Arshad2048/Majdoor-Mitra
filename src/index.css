@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  /* ── Legacy Theme Colors ── */
+  --color-saffron: #E65100;
+  --color-saffron-light: #FF9800;
+  --color-saffron-dark: #FF5722;
+  --color-green: #1B5E20;
+  --color-green-light: #4CAF50;
+  --color-green-dark: #2E7D32;
+  --color-white: #FFFFFF;
+  --color-bg: #F5F5F5;
+  --color-text: #212121;
+  --color-text-light: #757575;
+  --color-border: #E0E0E0;
+  --color-danger: #D32F2F;
+  --color-success: #388E3C;
+  --color-warning: #FFA000;
+
+  /* ── Brand Colors (Primary Palette) ── */
+  --brand-primary: #1A3B2A;
+  --brand-primary-light: #2D6B45;
+  --brand-primary-dark: #0D1A13;
+  --brand-secondary: #F25C05;
+  --brand-secondary-dark: #d85204;
+
+  /* ── Text Colors ── */
+  --text-heading: #1A202C;
+  --text-body: #2D3748;
+  --text-muted: #64748B;
+  --text-subtle: #4A5568;
+  --text-placeholder: #94A3B8;
+  --text-light: #A0AEC0;
+
+  /* ── Background Colors ── */
+  --bg-white: #FFFFFF;
+  --bg-off: #F8FAFC;
+  --bg-light: #F1F5F9;
+  --bg-hover: #EDF2F7;
+
+  /* ── Border Colors ── */
+  --border-light: #E2E8F0;
+  --border-medium: #CBD5E1;
+
+  /* ── Status Colors ── */
+  --status-error: #EF4444;
+  --status-error-bg: #FEF2F2;
+  --status-error-dark: #C53030;
+  --status-success: #10B981;
+  --status-warning-bg: #FED7D7;
+
+  /* ── Glassmorphism ── */
+  --glass-blur-sm: blur(4px);
+  --glass-blur-md: blur(8px);
+  --glass-blur-lg: blur(12px);
+  --glass-blur-xl: blur(20px);
+
+  /* ── Gradients ── */
+  --gradient-primary: linear-gradient(135deg, #1A3B2A 0%, #2D6B45 50%, #1A3B2A 100%);
+  --gradient-primary-simple: linear-gradient(135deg, #1A3B2A, #2D6B45);
+  --gradient-scrollbar: linear-gradient(180deg, #1A3B2A 0%, #2D6B45 100%);
+
+  /* ── Typography ── */
+  --font-en: 'Poppins', 'Inter', sans-serif;
+  --font-hi: 'Noto Sans', sans-serif;
+
+  /* ── Shadows ── */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-dropdown: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+
+  /* ── Border Radius ── */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 30px;
+
+  /* ── Z-Index Layers ── */
+  --z-base: 0;
+  --z-sticky: 50;
+  --z-dropdown: 100;
+  --z-header: 200;
+  --z-modal: 1000;
+  --z-alert: 10000;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  font-family: var(--font-en);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+html[lang="hi"] body {
+  font-family: var(--font-hi);
+}
+
+a {
+  color: var(--color-saffron);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-saffron-dark);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+/* Base App Layout */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+/* Premium micro-animations */
+.hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-saffron-dark), var(--color-saffron-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Global Animations ── */
+@keyframes coreFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes dropdownFadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes slideDownFade {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.core-fade-in {
+  animation: coreFadeIn 0.4s ease-in-out;
+}
+
+/* Utility Classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ── Themed Scrollbar ── */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #E8F0EB;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gradient-scrollbar);
+  border-radius: 10px;
+  border: 2px solid #E8F0EB;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--brand-secondary) 0%, var(--brand-secondary-dark) 100%);
+}
+
+/* Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--brand-primary) #E8F0EB;
+}
+
+/* ── Mobile Responsive Utilities ── */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 14px;
+  }
+}
+
+.auth-main {
+  min-height: 100dvh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-with-nav {
+  padding-bottom: 70px; /* Space for mobile bottom nav */
+}
+
+@media (min-width: 769px) {
+  .main-with-nav {
+    padding-bottom: 0;
+  }
+}
+
+@media (max-width: 768px) {
+
+  /* Hide custom scrollbar on touch devices — use native */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  html {
+    scrollbar-width: none;
+  }
+
+  /* Cleaner touch interactions */
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* ── Scroll Lock Utility ── */
+.stop-scroll {
+  overflow: hidden !important;
+  height: 100dvh;
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    display: none !important;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

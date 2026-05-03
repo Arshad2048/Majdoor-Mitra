@@ -1,0 +1,196 @@
+/* =====================
+   MOBILE TOP BAR
+   ===================== */
+
+.mobile-top-bar {
+    display: none !important; /* Hidden on desktop */
+}
+
+@media (max-width: 768px) {
+    .mobile-top-bar {
+        display: flex !important;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 18px;
+        background: var(--brand-primary);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        border-radius: 20px 20px 0 0;
+    }
+
+    .mtb-logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+    }
+
+    .mtb-logo-icon {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        overflow: hidden;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        flex-shrink: 0;
+    }
+
+    .mtb-logo-icon img {
+        width: 32px;
+        height: 32px;
+        transform: scale(1.5); /* Increased zoom for mobile */
+        object-fit: contain;
+        object-position: center top;
+    }
+
+    .mtb-brand {
+        font-size: 1.15rem;
+        font-weight: 800;
+        letter-spacing: -0.3px;
+    }
+
+    .mtb-brand-m {
+        color: #ffffff;
+    }
+
+    .mtb-brand-o {
+        color: var(--brand-secondary);
+    }
+
+    /* ── Hamburger Menu ── */
+    .mtb-menu-container {
+        position: relative;
+    }
+
+    .mtb-menu-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 38px;
+        height: 38px;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 12px;
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .mtb-menu-btn:active {
+        background: rgba(255, 255, 255, 0.28);
+        transform: scale(0.95);
+    }
+
+    .mtb-dropdown {
+        position: absolute;
+        top: calc(100% + 12px);
+        right: 0;
+        background: #fff;
+        border-radius: 16px;
+        padding: 12px;
+        min-width: 200px;
+        box-shadow: 0 12px 36px rgba(0, 0, 0, 0.18);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        z-index: 200;
+        animation: mtbDropIn 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+        transform-origin: top right;
+    }
+
+    @keyframes mtbDropIn {
+        from { opacity: 0; transform: scale(0.92) translateY(-6px); }
+        to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    .mtb-dropdown-links {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .mtb-dropdown-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 14px;
+        border-radius: 12px;
+        color: #2D3748;
+        font-size: 0.95rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.15s ease;
+    }
+
+    .mtb-dropdown-item:active {
+        background: #F0F2F5;
+    }
+
+    .mtb-dropdown-item svg {
+        color: #A0AEC0;
+        flex-shrink: 0;
+    }
+
+    .mtb-dropdown-divider {
+        height: 1px;
+        background: #EDF2F7;
+        margin: 12px 0;
+    }
+
+    .mtb-dropdown-lang-header {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 0 6px 8px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: #A0AEC0;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .mtb-lang-slider {
+        position: relative;
+        display: flex;
+        background: #F1F5F9;
+        padding: 4px;
+        border-radius: 12px;
+        margin: 0 6px;
+        isolation: isolate;
+    }
+
+    .mtb-slider-bg {
+        position: absolute;
+        top: 4px;
+        bottom: 4px;
+        left: 4px;
+        width: calc(50% - 4px);
+        background: var(--brand-secondary);
+        border-radius: 10px;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1;
+        box-shadow: 0 2px 8px rgba(242, 92, 5, 0.25);
+    }
+
+    .mtb-lang-option {
+        position: relative;
+        z-index: 2;
+        flex: 1;
+        padding: 10px;
+        border: none;
+        background: transparent;
+        color: var(--text-muted);
+        font-size: 0.88rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: color 0.3s ease;
+        text-align: center;
+    }
+
+    .mtb-lang-option.active {
+        color: #ffffff;
+    }
+}

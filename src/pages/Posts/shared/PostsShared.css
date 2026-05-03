@@ -1,0 +1,71 @@
+/* =====================
+   POSTS SHARED STYLES (BASE)
+   ===================== */
+
+.posts-shared-app {
+    min-height: 100vh;
+    background-color: var(--color-bg);
+}
+
+.posts-shared-wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.posts-shared-card {
+    background: #FFFFFF;
+    overflow: hidden;
+    border: none;
+}
+
+.posts-shared-header {
+    color: #FFFFFF;
+    position: relative;
+    overflow: hidden;
+}
+
+.posts-shared-header-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.posts-shared-title {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.posts-shared-subtitle {
+    opacity: 0.9;
+}
+
+.posts-shared-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ── Shared UI Elements ── */
+.posts-shared-error {
+    background: #FFF5F5;
+    color: #C53030;
+    padding: 14px 18px;
+    border-radius: 14px;
+    font-size: 0.88rem;
+    border: 1px solid #FEB2B2;
+    line-height: 1.4;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes slideUpFade {
+    from { 
+        opacity: 0; 
+        transform: translateY(15px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}

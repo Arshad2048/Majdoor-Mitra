@@ -1,0 +1,166 @@
+/* =====================
+   MOBILE FOOTER
+   ===================== */
+
+@media (max-width: 768px) {
+    .footer-main {
+        padding: 32px 0 24px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 0;
+        text-align: left;
+    }
+
+    /* ── Mobile Branding ── */
+    .footer-brand {
+        margin-bottom: 24px;
+    }
+
+    .footer-brand-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+    }
+
+    .footer-brand h3 {
+        margin-bottom: 0;
+        font-size: 1.4rem;
+    }
+
+    .footer-contact-row-mobile {
+        display: flex;
+        gap: 16px;
+    }
+
+    .footer-contact-row-mobile a,
+    .footer-contact-row-mobile span {
+        color: var(--brand-secondary);
+        background: rgba(242, 92, 5, 0.08);
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        transition: all 0.2s;
+    }
+
+    .footer-brand-tagline {
+        font-size: 0.85rem;
+        margin-bottom: 0;
+        text-align: left;
+        max-width: 100%;
+        color: rgba(255, 255, 255, 0.4);
+    }
+
+    .footer-contact-info {
+        display: none !important;
+    }
+
+    /* ── Mobile Accordion Styles ── */
+    .footer-links-container {
+        display: flex;
+        flex-wrap: wrap; /* Key for moving active content below header row */
+        justify-content: space-between;
+        gap: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        padding-bottom: 4px;
+        margin-bottom: 8px;
+    }
+
+    .footer-links {
+        display: contents; /* Makes h4 and link-group siblings in the flex container */
+    }
+
+    .footer-links h4 {
+        flex: 1; /* Each header takes equal space in the row */
+        padding: 12px 0;
+        margin-bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+        cursor: pointer;
+        text-transform: none;
+        letter-spacing: 0;
+        font-size: 0.82rem;
+        white-space: nowrap;
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    .footer-links.is-expanded h4 {
+        color: var(--brand-secondary);
+        font-weight: 800;
+    }
+
+    .mobile-chevron {
+        display: flex;
+        color: var(--brand-secondary);
+        opacity: 0.8;
+    }
+
+    /* Hide links by default on mobile */
+    .footer-link-group {
+        display: none;
+    }
+
+    /* Expand content to full width row below the headers */
+    .is-expanded .footer-link-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        order: 10; /* Force it below the row of headers */
+        width: 100%;
+        gap: 12px;
+        padding: 12px 0 20px;
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 12px;
+        margin: 8px 0 16px;
+        animation: fadeInScale 0.25s ease-out;
+    }
+
+    .footer-links a {
+        text-align: center;
+        font-size: 0.9rem;
+        padding: 6px 0;
+    }
+
+    .footer-cta-link {
+        justify-content: center;
+    }
+
+    .footer-bottom {
+        padding: 24px 0;
+    }
+
+    .footer-bottom-inner {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+
+    .footer {
+        border-radius: 0 0 24px 24px;
+        margin: 0 0 12px 0;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Adaptive padding for bottom nav */
+    .footer.has-mobile-nav .footer-bottom {
+        padding-bottom: 84px;
+    }
+}
+
+/* ── Mobile Animations ── */
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+}

@@ -1,0 +1,299 @@
+/* =====================
+   PUBLIC PROFILE PAGE
+   ===================== */
+
+.pp-contact-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    max-width: 300px;
+    margin: 20px auto 0;
+    padding: 14px;
+    background: var(--brand-secondary);
+    color: #fff;
+    border: none;
+    border-radius: 16px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 2px 12px rgba(242, 92, 5, 0.3);
+}
+
+.pp-contact-btn:hover {
+    background: #d85204;
+    transform: translateY(-2px);
+}
+
+
+.pp-bio {
+    background: #fff;
+    border-radius: 24px;
+    padding: 20px 22px;
+    font-size: 0.92rem;
+    color: var(--text-body);
+    line-height: 1.6;
+    margin: 0;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0,0,0,0.02);
+}
+
+.pp-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-light);
+    color: #475569;
+    font-size: 13px;
+    font-weight: 700;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+.pp-posts-section, .pp-reviews-section {
+    background: transparent;
+}
+
+.pp-scrollable-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-height: 500px;
+    overflow-y: auto;
+    padding-right: 8px; /* Room for scrollbar */
+    padding-bottom: 8px;
+}
+
+/* Custom Scrollbar for feeds */
+.pp-scrollable-feed::-webkit-scrollbar {
+    width: 6px;
+}
+.pp-scrollable-feed::-webkit-scrollbar-track {
+    background: transparent;
+}
+.pp-scrollable-feed::-webkit-scrollbar-thumb {
+    background: var(--border-medium);
+    border-radius: 4px;
+}
+.pp-scrollable-feed::-webkit-scrollbar-thumb:hover {
+    background: var(--text-placeholder);
+}
+
+.pp-empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    background: #fff;
+    border-radius: 16px;
+    border: 1.5px dashed var(--border-medium);
+}
+
+.pp-empty-icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.pp-empty-state p {
+    color: var(--text-muted);
+    font-weight: 500;
+    font-size: 15px;
+}
+
+/* Review Cards */
+.pp-review-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    border: 1px solid var(--bg-light);
+}
+
+.pp-review-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.pp-review-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--brand-primary);
+    color: #fff;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.pp-review-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.pp-review-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.pp-review-date {
+    font-size: 12px;
+    color: var(--text-placeholder);
+}
+
+.pp-review-stars {
+    display: flex;
+    gap: 2px;
+}
+
+.pp-review-comment {
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Review Form */
+.pp-write-review-btn {
+    background: var(--brand-primary);
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.pp-write-review-btn:hover {
+    background: #132a1e;
+}
+
+.pp-review-form-card {
+    background: #fff;
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.pp-review-form-card h4 {
+    margin: 0 0 16px 0;
+    font-size: 16px;
+    color: #0f172a;
+}
+
+.pp-error-text {
+    color: #dc2626;
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+.pp-rating-select {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.pp-rating-select label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #475569;
+}
+
+.pp-stars-input {
+    display: flex;
+    gap: 4px;
+}
+
+.pp-review-textarea {
+    width: 100%;
+    border: 1px solid var(--border-medium);
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 14px;
+    font-family: inherit;
+    resize: vertical;
+    outline: none;
+    margin-bottom: 16px;
+    color: #334155;
+}
+
+.pp-review-textarea:focus {
+    border-color: var(--brand-primary);
+    box-shadow: 0 0 0 2px rgba(26,59,42,0.1);
+}
+
+.pp-review-form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.pp-btn-cancel {
+    background: transparent;
+    border: 1px solid var(--border-light);
+    color: var(--text-muted);
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.pp-btn-cancel:hover {
+    background: var(--bg-light);
+}
+
+.pp-btn-submit {
+    background: var(--brand-secondary);
+    color: #fff;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.pp-btn-submit:hover:not(:disabled) {
+    background: #d85204;
+}
+
+.pp-btn-submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+@media (min-width: 600px) {
+    .public-profile-app {
+        padding: 24px 0;
+    }
+
+    .public-profile-wrapper {
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
+        background: #F0F2F5;
+        min-height: auto;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 1024px) {
+    .public-profile-app {
+        padding: 24px 20px;
+    }
+
+    .public-profile-wrapper {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}

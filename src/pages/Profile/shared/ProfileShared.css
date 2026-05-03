@@ -1,0 +1,272 @@
+/* ==========================================================================
+   PROFILE SHARED STYLES (Hybrid Layered Architecture)
+   Base layer for Profile, PublicProfile, and EditProfile components.
+   ========================================================================== */
+
+/* ── App Layout ── */
+.profile-shared-app {
+    min-height: 100vh;
+    background-color: #F0F2F5;
+    padding-top: 24px;
+    animation: profileFadeIn 0.3s ease;
+}
+
+@keyframes profileFadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.profile-shared-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    background: transparent;
+    padding-bottom: 40px;
+}
+
+/* ── Cover / Banner ── */
+.profile-shared-cover {
+    width: 100%;
+    height: 220px;
+    background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-primary-light) 50%, var(--brand-primary) 100%);
+    position: relative;
+    overflow: hidden;
+    border-radius: 32px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.profile-shared-cover::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, transparent 40%, rgba(0,0,0,0.1) 100%);
+    pointer-events: none;
+}
+
+.profile-cover-pattern {
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(circle at 20% 50%, rgba(242, 92, 5, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 40%);
+}
+
+.profile-shared-back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 3;
+    width: 42px;
+    height: 42px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.profile-shared-back-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* ── Identity & Avatar ── */
+.profile-shared-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -65px;
+    padding: 0 20px 24px;
+    position: relative;
+    z-index: 2;
+}
+
+.profile-shared-avatar-ring {
+    position: relative;
+    margin: 0 auto 15px;
+}
+
+.profile-shared-avatar {
+    width: 116px;
+    height: 116px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--brand-primary), var(--brand-primary-light));
+    border: 6px solid #F0F2F5; /* Cutout effect */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 36px;
+    font-weight: 700;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.profile-shared-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-shared-name {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--brand-primary);
+    margin-top: 16px;
+    margin-bottom: 6px;
+    letter-spacing: -0.5px;
+}
+
+.profile-shared-role-tag {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 24px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+}
+
+.profile-shared-role-tag.normal_user {
+    background: #e0e7ff;
+    color: #4338ca;
+}
+
+.profile-shared-role-tag.labour {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.profile-shared-role-tag.contractor {
+    background: #ffedd5;
+    color: #c2410c;
+}
+
+.profile-shared-rating-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #fff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+}
+
+.profile-rating-val {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--text-body);
+}
+
+/* ── Stats Row ── */
+.profile-shared-stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    margin: 0 20px 24px;
+    border-radius: 24px;
+    padding: 24px 0;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0,0,0,0.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-shared-stats:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+.profile-stat-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.profile-stat-num {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--brand-primary);
+    line-height: 1;
+}
+
+.profile-stat-label {
+    font-size: 0.75rem;
+    color: #718096;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.profile-stat-divider {
+    width: 2px;
+    height: 40px;
+    background: #F0F2F5;
+    border-radius: 2px;
+}
+
+/* ── General Sections & Cards ── */
+.profile-shared-section {
+    margin: 0 20px 24px;
+}
+
+.profile-shared-section-title {
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: #718096;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 12px;
+    padding-left: 8px;
+}
+
+.profile-shared-card {
+    background: #fff;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0,0,0,0.02);
+}
+
+/* ── Skills Chips ── */
+.profile-skills-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.profile-skill-chip {
+    background: var(--border-light);
+    color: #334155;
+    padding: 6px 14px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+
+@media (max-width: 480px) {
+    .profile-shared-cover { height: 180px; }
+    .profile-shared-avatar { width: 96px; height: 96px; border-width: 4px; }
+    .profile-shared-header { margin-top: -50px; padding-bottom: 16px; }
+    .profile-shared-name { font-size: 1.35rem; }
+    .profile-shared-stats { margin: 0 16px 20px; padding: 16px 0; border-radius: 20px; }
+    .profile-stat-num { font-size: 1.2rem; }
+    .profile-stat-label { font-size: 0.65rem; }
+    .profile-stat-divider { height: 30px; }
+    .profile-shared-section { margin: 0 16px 20px; }
+    .profile-shared-section-title { font-size: 0.72rem; }
+    .profile-skill-chip { padding: 4px 10px; font-size: 0.75rem; }
+}

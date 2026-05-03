@@ -1,0 +1,259 @@
+.search-page {
+    min-height: 100vh;
+    background-color: #f7f9fc;
+    padding-top: 15px; /* Adjust if Navbar is removed or kept. In the screenshot, Navbar is visible above it */
+}
+
+/* Ensure SearchPage is meant to sit under the Navbar */
+
+.search-header-bar {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    margin-bottom: 30px;
+    gap: 15px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.search-back-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background-color: var(--bg-light);
+    border: none;
+    cursor: pointer;
+    color: #475569;
+    transition: all 0.2s;
+}
+
+.search-back-btn:hover {
+    background-color: var(--border-light);
+    color: #0f172a;
+}
+
+.search-input-wrapper {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 1.5px solid var(--border-light);
+    border-radius: 14px;
+    padding: 0 16px;
+    height: 52px;
+    transition: all 0.2s ease;
+}
+
+.search-input-wrapper:focus-within {
+    border-color: var(--brand-primary);
+    box-shadow: 0 0 0 3px rgba(26, 59, 42, 0.08);
+}
+
+.search-input-wrapper .search-icon {
+    color: var(--text-placeholder);
+    margin-right: 10px;
+}
+
+.search-input-wrapper input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 15px;
+    color: #334155;
+    height: 100%;
+}
+
+.search-input-wrapper input::placeholder {
+    color: var(--text-placeholder);
+}
+
+/* POPULAR SEARCHES */
+.popular-searches-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.popular-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-placeholder);
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.popular-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.popular-pill {
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: #ffffff;
+    border: 1px solid var(--border-light);
+    color: #334155;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.popular-pill:hover {
+    border-color: var(--border-medium);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    color: var(--brand-secondary); /* Brand color hover */
+}
+
+/* TABS SECTION */
+.search-tabs {
+    display: flex;
+    max-width: 640px;
+    margin: 10px auto 0;
+    border-bottom: 2px solid var(--border-light);
+}
+
+.search-tab {
+    flex: 1;
+    text-align: center;
+    padding: 15px 0;
+    background: none;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s;
+    margin-bottom: -2px; /* overlap bottom border */
+}
+
+.search-tab.active {
+    color: #0f172a;
+    border-bottom-color: var(--brand-primary); /* Dark green brand color */
+}
+
+/* FEED CONTAINER */
+.search-feed {
+    max-width: 640px;
+    margin: 24px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Account Card Specific Profile design */
+.search-account-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 18px 20px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.search-account-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+    border-color: rgba(26, 59, 42, 0.08);
+    transform: translateY(-2px);
+    cursor: pointer;
+}
+
+.account-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: var(--bg-off);
+    border: 2px solid #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: #475569;
+}
+
+.account-info {
+    flex: 1;
+}
+
+.account-name-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 4px;
+}
+
+.account-name {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--brand-primary);
+}
+
+.account-role-tag {
+    font-size: 10px;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 12px;
+    background-color: #E8F5E9;
+    color: var(--brand-primary-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.account-details-row {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+}
+
+.account-stats-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #f59e0b; /* Rating color */
+}
+
+.account-stat {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.account-jobs {
+    color: var(--text-placeholder);
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .search-back-btn {
+        display: none !important;
+    }
+    .search-header-bar { padding: 0 16px; margin-bottom: 20px; gap: 0; }
+    .search-input-wrapper { height: 48px; border-radius: 12px; }
+    .search-page {
+        padding-bottom: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .popular-searches-container { margin: 24px auto; }
+    .popular-pill { padding: 8px 16px; font-size: 13px; }
+    .search-feed { padding: 0 12px; }
+}

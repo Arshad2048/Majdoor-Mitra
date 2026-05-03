@@ -1,0 +1,19 @@
+/* =====================
+   LOGIN PAGE SPECIFICS
+   ===================== */
+
+.login-page .auth-actions {
+    margin-bottom: 8px;
+}
+
+.login-page .forgot-link {
+    color: var(--brand-secondary);
+    font-weight: 500;
+}
+
+.login-page .forgot-link:hover {
+    color: #d85204;
+    text-decoration: underline;
+}
+
+/* Base button is in AuthShared.css, Login specific tweaks if any can go here */

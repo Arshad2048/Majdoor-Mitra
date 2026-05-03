@@ -1,0 +1,202 @@
+/* =====================
+   MAIN PROFILE STYLES
+   ===================== */
+
+@media (max-width: 768px) {
+    .main-profile-view .profile-shared-back-btn {
+        display: none !important;
+    }
+}
+
+/* ── Avatar Edit Badge ── */
+.profile-edit-badge {
+    position: absolute;
+    bottom: 4px;
+    right: 0px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--brand-secondary);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid #F0F2F5;
+    box-shadow: 0 4px 12px rgba(242, 92, 5, 0.3);
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+.profile-edit-badge:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+
+/* ── Menu Card ── */
+.profile-menu-card {
+    background: #fff;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0,0,0,0.02);
+}
+
+.profile-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 22px;
+    border-bottom: 1px solid #F0F2F5;
+    transition: background 0.2s ease;
+}
+
+.profile-menu-item:last-child {
+    border-bottom: none;
+}
+
+.profile-menu-link {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+.profile-menu-link:hover {
+    background: #F8F9FA;
+}
+
+.profile-menu-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.icon-loc {
+    background: rgba(49, 130, 206, 0.1);
+    color: #3182CE;
+}
+
+.icon-phone {
+    background: rgba(56, 161, 105, 0.1);
+    color: #38A169;
+}
+
+.icon-skill {
+    background: rgba(242, 92, 5, 0.1);
+    color: var(--brand-secondary);
+}
+
+.icon-edit {
+    background: rgba(49, 130, 206, 0.1);
+    color: #3182CE;
+}
+
+.icon-review {
+    background: rgba(255, 152, 0, 0.1);
+    color: #FF9800;
+}
+
+.icon-notify {
+    background: rgba(128, 90, 213, 0.1);
+    color: #805AD5;
+}
+
+.icon-privacy {
+    background: rgba(56, 161, 105, 0.1);
+    color: #38A169;
+}
+
+.icon-admin {
+    background: rgba(242, 92, 5, 0.1);
+    color: var(--brand-secondary);
+}
+
+.icon-help {
+    background: rgba(49, 130, 206, 0.1);
+    color: #3182CE;
+}
+
+.icon-terms {
+    background: rgba(160, 174, 192, 0.15);
+    color: #718096;
+}
+
+.profile-menu-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.profile-menu-label {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.profile-menu-value {
+    font-size: 0.92rem;
+    color: var(--text-body);
+    font-weight: 600;
+}
+
+.profile-menu-arrow {
+    color: #CBD5E0;
+    flex-shrink: 0;
+}
+
+/* Skills chips */
+.profile-skills-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 4px;
+}
+
+.profile-skill-chip {
+    background: rgba(26, 59, 42, 0.08);
+    color: var(--brand-primary);
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+/* ── Logout ── */
+.profile-logout-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: calc(100% - 32px);
+    margin: 8px 16px 0;
+    padding: 14px;
+    background: #fff;
+    color: #E53E3E;
+    border: 1px solid rgba(229, 62, 62, 0.2);
+    border-radius: 16px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+.profile-logout-btn:hover {
+    background: #FFF5F5;
+    border-color: #E53E3E;
+}
+
+/* Member since */
+.profile-member-since {
+    text-align: center;
+    font-size: 0.78rem;
+    color: var(--text-light);
+    margin-top: 20px;
+    padding-bottom: 20px;
+}

@@ -1,0 +1,450 @@
+/* =====================
+   NAVBAR — Modern Dark Green Theme
+   ===================== */
+
+.navbar {
+    background-color: var(--brand-primary);
+    position: sticky;
+    top: 0;
+    z-index: var(--z-header);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    height: 70px;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* ── Logo ── */
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.nav-logo:hover {
+    transform: scale(1.03);
+}
+
+.nav-logo-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    flex-shrink: 0;
+}
+
+.nav-logo-icon img {
+    width: 44px;
+    height: 44px;
+    transform: scale(1.4); /* Increased zoom */
+    object-fit: contain;
+    object-position: center top;
+}
+
+.nav-brand-text {
+    font-size: 1.35rem;
+    font-weight: 800;
+    letter-spacing: -0.3px;
+    line-height: 1;
+}
+
+.brand-majdoor {
+    color: #ffffff;
+}
+
+.brand-mitra {
+    color: var(--brand-secondary);
+}
+
+/* ── Nav Links ── */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-item {
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 0.25s ease;
+    text-decoration: none;
+    position: relative;
+}
+
+.nav-item:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-item::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 60%;
+    height: 2px;
+    background-color: var(--brand-secondary);
+    border-radius: 2px;
+    transition: transform 0.25s ease;
+}
+
+.nav-item:hover::after,
+.nav-item.active::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+.nav-item.active {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* ── Right Section ── */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-lang-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background: rgba(255, 255, 255, 0.12);
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-weight: 700;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.2s ease;
+    font-size: 0.85rem;
+    font-family: inherit;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.nav-lang-toggle:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.35);
+}
+
+.nav-lang-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.nav-lang-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    background: #fff;
+    border-radius: 12px;
+    padding: 6px;
+    min-width: 130px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    z-index: var(--z-dropdown);
+    animation: dropdownPopIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform-origin: top right;
+}
+
+@keyframes dropdownPopIn {
+    from {
+        opacity: 0;
+        transform: scale(0.85) translateY(-12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.lang-option {
+    padding: 10px 14px;
+    border-radius: 8px;
+    color: var(--text-body);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.lang-option:hover {
+    background: #F0F2F5;
+    color: var(--brand-primary);
+}
+
+.lang-option.active {
+    background: rgba(26, 59, 42, 0.08);
+    /* Light green tint */
+    color: var(--brand-primary);
+    font-weight: 700;
+}
+
+.nav-auth-desktop {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-login-btn {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 8px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.nav-login-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.4);
+    color: #fff;
+}
+
+.nav-register-btn {
+    background-color: var(--brand-secondary);
+    color: #fff;
+    padding: 9px 22px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    transition: all 0.25s ease;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(242, 92, 5, 0.3);
+}
+
+.nav-register-btn:hover {
+    background-color: var(--brand-secondary-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(242, 92, 5, 0.4);
+}
+
+/* ── Hamburger (hidden on desktop) ── */
+.nav-hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 6px;
+    transition: background 0.2s ease;
+}
+
+.nav-hamburger:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* ── Profile Avatar (logged in) ── */
+.nav-profile-btn {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.nav-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--brand-secondary), #FF8A3D);
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.2s ease;
+}
+
+.nav-profile-btn:hover .nav-avatar {
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: scale(1.08);
+}
+
+.nav-avatar-sm {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--brand-secondary), #FF8A3D);
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* ── Mobile Auth (hidden on desktop) ── */
+.nav-mobile-auth {
+    display: none;
+}
+
+.nav-mobile-profile-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.2s ease;
+}
+
+.nav-mobile-profile-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* ── Overlay ── */
+.nav-overlay {
+    display: none;
+}
+
+/* =====================
+   MOBILE (≤ 768px)
+   ===================== */
+@media (max-width: 768px) {
+
+    .nav-container {
+        height: 60px;
+        padding: 0 16px;
+    }
+
+    /* Hide entire desktop auth section (login/register/avatar) */
+    .nav-auth-desktop {
+        display: none;
+    }
+
+    /* Show hamburger */
+    .nav-hamburger {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Mobile slide-down menu */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: var(--brand-primary);
+        padding: 16px 24px 24px;
+        gap: 4px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        animation: slideDown 0.25s ease;
+    }
+
+    .nav-links--open {
+        display: flex;
+    }
+
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-8px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .nav-item {
+        width: 100%;
+        padding: 12px 16px;
+        font-size: 1rem;
+        border-radius: 8px;
+    }
+
+    .nav-item::after {
+        display: none;
+    }
+
+    /* Show mobile auth links */
+    .nav-mobile-auth {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 12px;
+        padding-top: 16px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        width: 100%;
+    }
+
+    .nav-mobile-auth .nav-login-btn {
+        text-align: center;
+        padding: 12px;
+    }
+
+    .nav-mobile-auth .nav-register-btn {
+        text-align: center;
+        padding: 12px;
+        display: block;
+    }
+
+    /* Overlay */
+    .nav-overlay {
+        display: block;
+        position: fixed;
+        inset: 0;
+        top: 60px;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: var(--z-base);
+    }
+
+    /* Completely hide desktop navbar to show new mobile app-like bottom nav */
+    .navbar {
+        display: none !important;
+    }
+}
+
+/* -- Auth Fade-in -- */
+.nav-fade-in {
+    animation: navAuthFadeIn 0.4s ease-out;
+}
+
+@keyframes navAuthFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

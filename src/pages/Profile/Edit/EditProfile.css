@@ -1,0 +1,538 @@
+/* =====================
+   EDIT PROFILE — Mobile App Style
+   ===================== */
+
+
+
+/* ── Header ── */
+.edit-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: #fff;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.edit-back-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    border: none;
+    background: #F0F2F5;
+    color: var(--text-body);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.edit-back-btn:hover {
+    background: var(--border-light);
+}
+
+.edit-header-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--brand-primary);
+}
+
+/* ── Avatar Section ── */
+.edit-avatar-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 0 24px;
+    background: transparent;
+}
+
+.edit-avatar-ring {
+    position: relative;
+}
+
+.edit-avatar-circle {
+    width: 104px;
+    height: 104px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--brand-primary), var(--brand-primary-light));
+    border: 5px solid #F0F2F5;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    overflow: hidden;
+}
+
+/* ── Banner Camera (legacy — keep for avatar) ── */
+.edit-banner-camera {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s ease;
+    z-index: 20;
+}
+
+.edit-banner-camera:hover {
+    background: rgba(255, 255, 255, 0.35);
+    transform: scale(1.1);
+}
+
+.edit-avatar-camera {
+    position: absolute;
+    bottom: 2px;
+    right: -2px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--brand-secondary);
+    color: #fff;
+    border: 4px solid #F0F2F5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(242, 92, 5, 0.3);
+    transition: transform 0.2s ease;
+}
+
+.edit-avatar-camera:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* ── Multi-Image Banner Editor ── */
+.ep-banner-section {
+    margin-bottom: 16px;
+}
+
+.ep-banner-viewport {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    background: linear-gradient(135deg, var(--brand-primary), var(--brand-primary-light));
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.ep-banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    animation: bannerFade 0.3s ease;
+}
+
+@keyframes bannerFade {
+    from { opacity: 0.5; transform: scale(1.02); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.ep-banner-empty {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: rgba(255,255,255,0.6);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.ep-banner-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.35);
+    backdrop-filter: blur(6px);
+    color: #fff;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    z-index: 5;
+}
+.ep-banner-nav:hover { background: rgba(0,0,0,0.55); }
+.ep-banner-nav-left { left: 10px; }
+.ep-banner-nav-right { right: 10px; }
+
+.ep-banner-remove {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(229, 62, 62, 0.85);
+    color: #fff;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 5;
+    transition: all 0.2s;
+}
+.ep-banner-remove:hover { background: #C53030; transform: scale(1.1); }
+
+.ep-banner-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 6px;
+    z-index: 5;
+}
+
+.ep-banner-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.4);
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    padding: 0;
+}
+.ep-banner-dot.active {
+    background: #fff;
+    width: 20px;
+    border-radius: 4px;
+}
+
+.ep-banner-counter {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(6px);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 12px;
+    z-index: 5;
+}
+
+.ep-banner-thumbs {
+    display: flex;
+    gap: 8px;
+    padding: 12px 16px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+.ep-banner-thumbs::-webkit-scrollbar { display: none; }
+
+.ep-banner-thumb {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    overflow: hidden;
+    flex-shrink: 0;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.2s;
+}
+.ep-banner-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.ep-banner-thumb.active {
+    border-color: var(--brand-primary);
+    box-shadow: 0 0 0 2px rgba(26, 59, 42, 0.2);
+}
+
+.ep-banner-thumb-add {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #F0F2F5;
+    color: #718096;
+    border: 2px dashed #CBD5E0;
+}
+.ep-banner-thumb-add:hover {
+    background: var(--border-light);
+    color: var(--text-subtle);
+}
+
+.ep-banner-hint {
+    text-align: center;
+    font-size: 0.72rem;
+    color: var(--text-light);
+    margin: 0 0 4px;
+}
+
+/* ═══ Banner Carousel (Profile Views) ═══ */
+.banner-carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.banner-carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.banner-carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.3);
+    backdrop-filter: blur(4px);
+    color: #fff;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 5;
+    transition: background 0.2s;
+}
+.banner-carousel-nav:hover { background: rgba(0,0,0,0.55); }
+.banner-carousel-nav-left { left: 8px; }
+.banner-carousel-nav-right { right: 8px; }
+
+.banner-carousel-dots {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 5px;
+    z-index: 5;
+}
+.banner-carousel-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.45);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.banner-carousel-dot.active {
+    background: #fff;
+    width: 18px;
+    border-radius: 4px;
+}
+
+/* ── Form ── */
+.edit-form {
+    padding: 0 20px;
+    margin-top: 8px;
+}
+
+.edit-form-section {
+    margin-bottom: 24px;
+}
+
+.edit-form-section-title {
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: #718096;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 12px;
+    padding-left: 8px;
+}
+
+.edit-form-card {
+    background: #fff;
+    border-radius: 28px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0,0,0,0.03);
+    margin-bottom: 24px;
+    overflow: visible; /* Prevent labels from being cut off */
+}
+
+.edit-input-row {
+    display: block;
+    padding: 24px 24px; /* Spacious padding */
+    border-bottom: 1px solid #F0F2F5;
+    transition: background 0.2s ease;
+}
+
+.edit-input-row:last-child {
+    border-bottom: none;
+}
+
+.edit-input-icon {
+    color: var(--text-light);
+    flex-shrink: 0;
+    margin-top: 32px;
+}
+
+.edit-input-row .input-group {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.edit-input-row-textarea {
+    padding: 20px 24px;
+}
+
+.edit-input-row-textarea .textarea-field {
+    resize: vertical;
+    min-height: 100px;
+    border-radius: 12px;
+}
+
+/* ── Action Buttons ── */
+.edit-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.edit-save-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 15px;
+    background: var(--brand-primary);
+    color: #fff;
+    border: none;
+    border-radius: 14px;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(26, 59, 42, 0.2);
+}
+
+.edit-save-btn:hover {
+    background: #122a1e;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(26, 59, 42, 0.3);
+}
+
+.edit-cancel-btn {
+    width: 100%;
+    padding: 14px;
+    background: transparent;
+    color: #718096;
+    border: 1px solid var(--border-light);
+    border-radius: 14px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.edit-cancel-btn:hover {
+    background: #F8F9FA;
+    border-color: #CBD5E0;
+}
+
+/* =====================
+   RESPONSIVE (larger screens)
+   ===================== */
+@media (min-width: 481px) {
+    .edit-profile-app {
+        padding: 24px 0;
+    }
+
+    .edit-profile-wrapper {
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
+        background: #F0F2F5;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+    .edit-profile-app {
+        padding: 24px 20px;
+    }
+
+    .edit-profile-wrapper {
+        max-width: 520px;
+        margin: 0 auto;
+    }
+}
+
+/* --- Detecting / Error Styles --- */
+.detect-btn {
+    background: none;
+    border: none;
+    color: var(--brand-secondary);
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.detect-btn:hover:not(:disabled) {
+    background: rgba(242, 92, 5, 0.08);
+}
+
+.detect-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.error-alert {
+    background: #FFF5F5;
+    color: #C53030;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin: 0 20px 20px;
+    border: 1px solid #FED7D7;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.error-alert::before {
+    content: '⚠️';
+}
+
+/* --- Professional Phone Input --- */
+.phone-error-msg {
+    color: #E53E3E;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-top: 4px;
+    display: block;
+    padding-left: 4px;
+}

@@ -1,0 +1,129 @@
+/* =====================
+   SHARED FOOTER BASE
+   ===================== */
+
+.footer {
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-bg-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center bottom;
+    z-index: 0;
+}
+
+.footer-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+            rgba(13, 30, 20, 0.82) 0%,
+            rgba(13, 30, 20, 0.72) 50%,
+            rgba(13, 30, 20, 0.85) 100%);
+    z-index: 1;
+}
+
+/* ── Main Structure Base ── */
+.footer-main {
+    position: relative;
+    z-index: 2;
+    border-top: 3px solid var(--brand-secondary);
+}
+
+.footer-container {
+    display: grid;
+}
+
+/* ── Brand Column ── */
+.footer-brand h3 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.footer-brand h3 span {
+    color: var(--brand-secondary);
+}
+
+.footer-brand-tagline {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.footer-contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.footer-contact-item svg {
+    color: var(--brand-secondary);
+    flex-shrink: 0;
+}
+
+/* ── Link Columns Base ── */
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links h4 {
+    font-weight: 700;
+    color: #fff;
+    position: relative;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    font-size: 0.88rem;
+    transition: all 0.2s ease;
+}
+
+/* CTA links base */
+.footer-cta-link {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 6px;
+}
+
+.footer-cta-link svg {
+    transition: transform 0.2s ease;
+}
+
+/* ── Bottom Bar Base ── */
+.footer-bottom {
+    position: relative;
+    z-index: 2;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-bottom-inner {
+    display: flex;
+}
+
+.footer-bottom p {
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.footer-tagline-small {
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.3) !important;
+}

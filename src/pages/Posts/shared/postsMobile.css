@@ -1,0 +1,145 @@
+/* =====================
+   POSTS MOBILE STYLES (APP-FEEL)
+   ===================== */
+
+@media (max-width: 768px) {
+    .posts-shared-app {
+        padding: 0 !important; /* Removed 100px padding to fix gray gap at bottom */
+        background: #FFFFFF;
+    }
+
+    /* Force full-screen flush card */
+    .posts-shared-card {
+        padding: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        min-height: 100vh;
+    }
+
+    /* Compact Header overrides */
+    .posts-shared-header {
+        padding: max(16px, env(safe-area-inset-top)) 16px 16px !important;
+        text-align: left !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 12px !important;
+    }
+
+    .posts-shared-back-btn {
+        position: static !important;
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        color: #FFFFFF;
+        width: 40px !important;
+        height: 40px !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+        cursor: pointer;
+        backdrop-filter: blur(8px);
+        flex-shrink: 0;
+    }
+
+    .posts-shared-header-content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+        margin-top: 0;
+        flex: 1;
+    }
+
+    .posts-shared-header-icon {
+        width: 40px !important;
+        height: 40px !important;
+        border-radius: 10px !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        margin: 0 !important;
+    }
+
+    .posts-shared-header-icon svg {
+        width: 22px !important;
+        height: 22px !important;
+    }
+
+    .posts-shared-header-text {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .posts-shared-title {
+        font-size: 1.15rem !important;
+        margin-bottom: 0 !important;
+        line-height: 1.2;
+    }
+
+    .posts-shared-subtitle {
+        display: none !important; /* Hide subtitle for a sleek native app nav bar */
+    }
+
+    .posts-shared-form {
+        padding: 20px;
+        gap: 24px;
+        padding-bottom: 90px; /* Offset for sticky bar */
+    }
+
+    .posts-shared-error {
+        margin: 16px 20px 0;
+        border-radius: 12px;
+    }
+
+    /* Animations Staggered */
+    .posts-shared-header > * { animation: slideUpFade 0.5s ease-out forwards; }
+    .posts-shared-header h1 { animation-delay: 0.1s; }
+    .posts-shared-header p { animation-delay: 0.2s; }
+
+    /* Sticky Mobile Actions (Moved from PostForm.css) */
+    .post-form-actions {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #FFFFFF;
+        padding: 16px 20px calc(16px + env(safe-area-inset-bottom));
+        margin-top: 0;
+        flex-direction: row;
+        gap: 12px;
+        box-shadow: 0 -10px 25px rgba(0, 0, 0, 0.05);
+        border-top: 1px solid var(--border-light);
+        z-index: 1000;
+        backdrop-filter: blur(10px);
+    }
+
+    .btn-cancel {
+        flex: 0 0 48px !important; /* Circular or small square icon-style */
+        width: 48px !important;
+        height: 48px !important;
+        padding: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        border-radius: 14px !important;
+        font-size: 0 !important; /* Hide text */
+    }
+
+    .btn-cancel::before {
+        content: '✕'; /* Simple close icon */
+        font-size: 1.2rem;
+        color: var(--text-muted);
+    }
+
+    .btn-submit {
+        flex: 1 !important;
+        height: 48px !important;
+        border-radius: 14px !important;
+        font-weight: 700 !important;
+        font-size: 1rem !important;
+    }
+}
