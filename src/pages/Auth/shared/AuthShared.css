@@ -217,7 +217,8 @@
 }
 
 /* --- THE PRIMARY AUTH BUTTON --- */
-.auth-form .btn-auth-primary {
+.auth-form .btn-auth-primary,
+.success-state-new .btn-auth-primary {
     background-color: var(--brand-primary);
     color: white;
     border: none;
@@ -236,13 +237,15 @@
     margin-top: 10px;
 }
 
-.auth-form .btn-auth-primary:hover:not(:disabled) {
+.auth-form .btn-auth-primary:hover:not(:disabled),
+.success-state-new .btn-auth-primary:hover:not(:disabled) {
     background-color: #122a1e;
     transform: translateY(-2px);
     box-shadow: 0 12px 28px rgba(26, 59, 42, 0.28);
 }
 
-.auth-form .btn-auth-primary:active:not(:disabled) {
+.auth-form .btn-auth-primary:active:not(:disabled),
+.success-state-new .btn-auth-primary:active:not(:disabled) {
     transform: translateY(0);
     scale: 0.985;
 }
